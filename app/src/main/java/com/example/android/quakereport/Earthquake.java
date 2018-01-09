@@ -7,41 +7,52 @@ package com.example.android.quakereport;
 public class Earthquake {
 
     //Magnitude do terremoto
-    private String mMag;
+    private Double mMag;
 
     //Local do registro
     private String mLoc;
 
-    //Data do ocorrido
-    private String mDat;
+    //Tempo do terremoto
+    private long mTimeInMilliseconds;
+
+    /** URL do website do terremoto */
+    private String mUrl;
 
     /*
     * Criando um novo objeto Earthquake
     *
-    * @param mMag é a magnitude na escala richster
-    * @param Loc é o local onde foi registrado o terremoto
-    * @param mDat é a data em que ocorreu o terremoto
+    * @param mMag  é a magnitude (tamanho) do terremoto
+    * @param mLoc é a localização da cidade do terremoto
+    * @param mtimeInMilliseconds é o tempo em milissegundos (da época) quando o
+    *                           terremoto aconteceu
+    *@param mUrl é o URL do website para achar mais detalhes sobre o earthquake
     * */
-
-    public Earthquake(String mMag, String mLoc, String mDat) {
-        this.mMag = mMag;
-        this.mLoc = mLoc;
-        this.mDat = mDat;
+    public Earthquake(Double mag, String loc, long timeInMilliseconds, String url) {
+        this.mMag = mag;
+        this.mLoc = loc;
+        this.mTimeInMilliseconds = timeInMilliseconds;
+        this.mUrl = url;
     }
 
 
     //obter a Magnitude
-    public String getmMag() {
+    public Double getMag() {
         return mMag;
     }
 
     //obter a localidade
-    public String getmLoc() {
+    public String getLoc() {
         return mLoc;
     }
 
     //obter a data
-    public String getmDat() {
-        return mDat;
+    public long getTimeInMilliseconds() {
+        return mTimeInMilliseconds;
+    }
+    /**
+     * Obter a URL do website para achar mais informações sobre o earthquake.
+     */
+    public String getUrl() {
+        return mUrl;
     }
 }
